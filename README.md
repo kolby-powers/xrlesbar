@@ -60,4 +60,4 @@ Probleme und Wünsche bitte als [Issue](https://github.com/kolby-powers/xrlesbar
 
 **Lizenzen:** XRlesbar enthält Open-Source-Komponenten, unter anderem unter Apache 2.0, MPL 2.0 (Saxon-HE) und EUPL 1.2 (Prüfregeln der EN 16931). Die vollständigen Lizenzhinweise liegen jedem Release bei (`THIRD-PARTY-NOTICES`) und stecken auch in der JAR-Datei.
 
-**Keine Gewähr:** Das Prüfergebnis von XRlesbar ist eine Hilfe, keine rechtsverbindliche Bewertung einer Rechnung.
+**Kostenlos und ohne Gewähr:** Das Prüfergebnis beruht auf den offiziellen Prüfregeln, ersetzt aber keine steuerliche oder rechtliche Prüfung. Es ist eine Hilfe, keine rechtsverbindliche Bewertung einer Rechnung.
