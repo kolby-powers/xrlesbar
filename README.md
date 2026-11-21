@@ -2,7 +2,7 @@
 
 XRlesbar macht E-Rechnungen lesbar: Es prüft XRechnungen und ZUGFeRD-/Factur-X-Rechnungen mit den offiziellen Prüfregeln und zeigt sie als sauber druckbares PDF an – so, wie die Koordinierungsstelle für IT-Standards (KoSIT) die Darstellung vorgibt.
 
-> **Status:** in Entwicklung, noch keine Version veröffentlicht. Die Kommandozeile funktioniert bereits; die Oberfläche und der Update-Mechanismus folgen.
+> **Status:** erste öffentliche Version 0.5. Solange die Versionsnummer mit 0 beginnt, ist XRlesbar noch in Entwicklung. **[Zum Download](#download)**
 
 ## Lokal und offline
 
@@ -21,10 +21,11 @@ XRlesbar ist ein Programm für den eigenen Rechner, kein Online-Dienst.
   - XRechnung 3.0 mit dem KoSIT-Validator und der offiziellen KoSIT-Konfiguration
   - ZUGFeRD-Profile MINIMUM, BASIC WL, BASIC, EN 16931 und EXTENDED mit den offiziellen Prüfregeln von FeRD
 - **Darstellung als PDF** mit den offiziellen KoSIT-Stylesheets; ungültige Rechnungen bekommen einen deutlichen Warnhinweis auf der ersten Seite
-- Beschriftungen auf **Englisch oder Deutsch**
-- *geplant:* Oberfläche mit Vorschau, Drucken und Ansicht des Original-PDFs; Update-Prüfung nach Zustimmung
+- **Oberfläche** mit Ampel, Meldungsliste und Vorschau; Datei öffnen oder ins Fenster ziehen, PDF speichern, drucken oder im PDF-Viewer öffnen, bei ZUGFeRD auch das Original-PDF ansehen
+- Oberfläche und PDF-Beschriftungen auf **Englisch oder Deutsch**
+- **Updates** nur nach Zustimmung; jede neue Version wird einzeln bestätigt, per Prüfsumme kontrolliert und eingesetzt
 
-**Grenzen:** ZUGFeRD 1.0 wird nicht unterstützt. Manche Rechnungen im ZUGFeRD-Profil EXTENDED nutzen Angaben, die die offizielle KoSIT-Darstellung nicht abbilden kann (z. B. mehrere Fälligkeitsdaten); sie werden trotzdem geprüft.
+**Grenzen:** ZUGFeRD 1.0 wird nicht unterstützt. Manche Rechnungen im ZUGFeRD-Profil EXTENDED nutzen Angaben, die die offizielle KoSIT-Darstellung nicht abbilden kann (z. B. mehrere Fälligkeitsdaten); sie werden trotzdem geprüft und als Original-PDF gezeigt. In der Vorschau fehlen bei manchen Fenstergrößen einzelne dünne Rahmenlinien; das erzeugte PDF ist vollständig.
 
 ## Kommandozeile
 
@@ -35,7 +36,7 @@ java -jar xrlesbar.jar rechnung.xml --validate-only
 java -jar xrlesbar.jar rechnung.pdf --extract-xml -o rechnung.xml
 ```
 
-Ausgaben der Kommandozeile sind englisch. Exit-Codes: 0 gültig (auch mit Warnungen), 1 Datei nicht verarbeitbar, 2 Aufruf fehlerhaft, 4 Rechnung ungültig oder nicht prüfbar.
+Ausgaben der Kommandozeile sind englisch. Exit-Codes: 0 gültig (auch mit Warnungen), 1 Datei nicht verarbeitbar, 2 Aufruf fehlerhaft, 3 Java zu alt, 4 Rechnung ungültig oder nicht prüfbar (das PDF wird trotzdem geschrieben, mit Warnbalken).
 
 ## Voraussetzungen
 
@@ -44,7 +45,15 @@ Ausgaben der Kommandozeile sind englisch. Exit-Codes: 0 gültig (auch mit Warnun
 
 ## Download
 
-Die aktuelle Version gibt es unter [Releases](https://github.com/kolby-powers/xrlesbar/releases), sobald die erste veröffentlicht ist.
+- **[xrlesbar.zip](https://github.com/kolby-powers/xrlesbar/releases/latest/download/xrlesbar.zip)** – empfohlen: Programm mit Start-Skripten, die fehlendes Java erkennen und den Download anbieten
+- [xrlesbar.jar](https://github.com/kolby-powers/xrlesbar/releases/latest/download/xrlesbar.jar) – nur das Programm
+- Prüfsummen (`.sha256`), Lizenzhinweise und ältere Versionen: [Releases](https://github.com/kolby-powers/xrlesbar/releases)
+
+**Starten:** ZIP in einen Ordner entpacken, in dem Sie schreiben dürfen (z. B. Dokumente – nicht „Programme“, sonst kann sich XRlesbar nicht selbst aktualisieren). Dann:
+
+- **Windows:** Doppelklick auf `xrlesbar.jar` oder `Start.bat`
+- **macOS:** Doppelklick auf `xrlesbar.jar` oder `Start.command`. Beim ersten Mal meldet macOS „nicht verifizierter Entwickler“: Rechtsklick auf die Datei → „Öffnen“ → „Öffnen“.
+- **Linux:** `./start.sh` oder `java -jar xrlesbar.jar`
 
 ## Fehler melden
 
