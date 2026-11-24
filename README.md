@@ -61,7 +61,7 @@ Probleme und Wünsche bitte als [Issue](https://github.com/kolby-powers/xrlesbar
 
 ## Hinweise
 
-**EN 16931:** XRlesbar ist eine Implementierung des semantischen Datenmodells der Europäischen Norm EN 16931-1:2017 und der Syntaxen nach CEN/TS 16931-2:2017. Die Wiedergabe erfolgt mit Zustimmung von CEN und DIN als Urheberrechtsinhaber.
+**EN 16931:** XRlesbar ist eine Implementierung des semantischen Datenmodells der Europäischen Norm EN 16931-1:2017 und der Syntaxen nach CEN/TS 16931-2:2017. Die Wiedergabe erfolgt mit Zustimmung von CEN und DIN als Urheberrechtsinhaber. CEN und DIN haften nicht für Inhalt und Umsetzung dieser Anwendung; im Zweifel gelten die offiziellen Normtexte, die das DIN bereitstellt.
 
 **KoSIT:** XRlesbar nutzt den KoSIT-Validator, die KoSIT-Konfiguration für XRechnung und die XRechnung-Visualisierung der Koordinierungsstelle für IT-Standards unverändert. XRlesbar ist kein offizielles Produkt der KoSIT.
 
